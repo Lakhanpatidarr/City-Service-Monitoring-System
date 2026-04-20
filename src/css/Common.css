@@ -1,0 +1,8 @@
+.page-container {
+    min-height: calc(50vh - 50px);
+    align-items: center;      
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+    line-height: 1.5;
+}

@@ -1,0 +1,158 @@
+.main-container {
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1160px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px 10px;
+}
+.nav-link {
+    text-decoration: none;
+    color: #2C3E50;
+    font-size: 16px;
+    font-weight: 500;
+}
+.nav-link:hover {
+    color: black;
+    transition: 0.3s;
+}
+.title {
+    color: #2C3E50;
+    font-size: 18px;
+    font-weight: bold;
+    width: 70px;
+    height: 50px;
+}
+.title:hover {
+    transform: scale(1.10);
+    transition: 0.2s;
+}
+.ul-link {
+    display: flex;
+    column-gap: 1.3rem;
+    padding-right: 1rem;
+}
+.login-signup {
+    display: flex;
+    gap: 16px;
+}
+.login-btn {
+    all: unset;
+    background: #006dff;
+    color: white;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.login-btn:hover {
+    background: #0053d6;
+}
+.signup-btn {
+    all: unset;
+    background: #006dff;
+    color: white;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.signup-btn:hover {
+    background: #0053d6;
+}
+.logout-btn {
+    all: unset;
+    background: #006dff;
+    color: white;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.logout-btn:hover {
+    background: #0053d6;
+}
+.dashboard-btn {
+    all: unset;
+    background: #006dff;
+    color: white;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.dashboard-btn:hover {
+    background: #0053d6;
+}
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 260px;
+        height: 100%;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 60px 0px;
+        transition: 0.3s;
+        z-index: 2000;
+    }
+    .mobile-menu.active {
+        right: 0;
+    }
+    .login-signup {
+        position: fixed;
+        right: -100%;
+        top: 280px;  
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 2001;
+        transition: 0.3s;
+    }
+    .mobile-menu.active ~ .login-signup {
+        right: 0;
+    }
+    .mobile-menu .ul-link {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+    .login-signup button {
+        width: 200px;
+        padding: 6px 10px;
+        font-size: 13px;
+        text-align: center;
+    }
+    .ul-link {
+        display: none;
+        text-align: start;
+        padding-left: 26px;
+    }
+    .ul-link:hover {
+        color: black;
+    }
+}

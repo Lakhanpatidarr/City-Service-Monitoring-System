@@ -1,0 +1,103 @@
+.pending-title-complaints {
+  text-align: center;
+}
+.pending-grid-container {
+  max-width: 1160px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  gap: 20px;
+  margin: 20px auto 40px auto;
+}
+.pending-complaint-card {
+  width: 373px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #f2f7fc;
+  border-radius: 0.25rem;
+  transition: transform 0.3s ease-in, box-shadow 0.3s ease-in;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.pending-complaint-image {
+  width: 243px;
+  height: 213px; 
+  border-radius: 3px;
+  margin: 15px;
+  width: calc(100% - 30px);
+}
+.pending-complaint-content {
+  padding: 10px 20px;
+}
+.title-pending-complaint{
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+.pending-desc {
+  margin-bottom: 15px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.pending-details p {
+  margin: 5px 0;
+}
+.status.Pending {
+  color: orange;
+  background: #fff3e0;
+  font-weight: bold;
+}
+.status.Resolved {
+  color: green;
+  background: #eaf4ff;
+  font-weight: bold;
+}
+.status.Accepted {
+  color: #3498db; 
+  background: #eaf4ff;
+  font-weight: bold;
+}
+.pending-no-complaint-tag {
+  text-align: center;
+}
+@media (max-width: 1024px) {
+  .pending-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pending-complaint-card {
+    width: 320px;
+  }
+}
+@media (max-width: 768px) {
+  .pending-grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .pending-complaint-card {
+    width: 90%;
+  }
+
+  .pending-complaint-image {
+    height: 180px;
+  }
+}
+@media (max-width: 480px) {
+  .pending-complaint-card {
+    width: 100%;
+  }
+
+  .pending-complaint-image {
+    height: 160px;
+  }
+
+  .pending-complaint-content {
+    padding: 10px;
+  }
+}

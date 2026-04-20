@@ -1,0 +1,612 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;   
+}
+.img_slider figure,
+.img_slider .my_slide {
+    margin: 0;
+    padding: 0;
+}
+.image-text {
+    position: absolute;
+    color: black;
+    font-weight: bold;
+    font-size:x-large;
+    top: 10px;
+    left: 0px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.img_slider::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 85vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+.img_slider {
+    width: 100%;
+    height: 85vh;
+    overflow: hidden;
+}
+.my_slide img {
+    width: 100%;
+    height: 85vh;
+}
+figure {
+    position: relative;
+    left: 0;
+    width: 400%;
+    animation: 20s my_slide infinite;
+}
+.my_slide {
+    position: relative;
+    float: left;
+    width: 25%;
+}
+ @keyframes my_slide {
+    0%,10% {
+        left: 0%;
+    }
+    15%,25% {
+        left: -100%;
+    }
+    30%,40% {
+        left: -200%;
+    }
+    45%,55% {
+        left: -300%;
+    }
+    60%,70% {
+        left: -200%;
+    }
+    75%,85% {
+        left: -100%;
+    }
+    90%,100% {
+        left: 0%;
+    }
+}
+.home-margin {
+    margin-top: 50px;
+}
+.home-about-indore {
+    width: 100%;
+    max-width: 1160px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+.img-container {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    max-width: 1160px;
+}
+.image-first {
+    width: 373px;
+    height: 243px;
+    border-radius: 3px;
+    transition: transform 0.3s ease-in, box-shadow 0.3s ease-in;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+.image-first:hover {
+    transform: scale(1.05);
+}
+.image-second {
+    width: 373px;
+    height: 243px;
+    border-radius: 3px;
+    transition: transform 0.3s ease-in, box-shadow 0.3s ease-in;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+.image-second:hover {
+    transform: scale(1.05);
+}
+.image-third {
+    width: 373px;
+    height: 243px;
+    border-radius: 3px;
+    transition: transform 0.3s ease-in, box-shadow 0.3s ease-in;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+.image-third:hover {
+    transform: scale(1.05);
+}
+.btn-home {
+    all: unset;
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #006dff;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-home:hover {
+    background: #0053d6;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+.Indore-city-heading {
+    font-weight: bold;
+    font-size: 20px;
+}
+.rating-box-main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.rating-box-home {
+    width: 100%;
+    max-width: 1160px;
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    padding: 25px 20px;
+    box-sizing: border-box;
+    margin-top: 2rem; 
+}
+.rating-box-home h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+.rating-box-home table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 16px;
+}
+.rating-box-home th {
+    background-color: #333333;
+    color: white;
+    padding: 12px;
+}
+.rating-box-home td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.rating-box-home tr:hover {
+    background-color: #f1f1f1;
+}
+.rating-box-home p {
+    text-align: center;
+    font-size: 1rem;
+    color: #555;
+}
+.issues-conatiner {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+.first-issues {
+    width: 300px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    background-color: #FEE2E2;
+    color: #B91C1C;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border: none;
+    border-radius: 12px;
+    font-family: "Inter", sans-serif;
+    transition: 0.2s ease;
+}
+.first-issues:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.15);
+}
+.second-issues {
+    width: 300px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    background-color: #FEF3C7;
+    color: #B45309;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border: none;
+    border-radius: 12px;
+    font-family: "Inter", sans-serif;
+    transition: 0.2s ease;
+}
+.second-issues:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.15);
+}
+.third-issues {
+    width: 300px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    background-color: #DCFCE7;
+    color: #166534;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border: none;
+    border-radius: 12px;
+    font-family: "Inter", sans-serif;
+    transition: 0.2s ease;
+}
+.third-issues:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.15);
+}
+.home-issue-button-main-container {
+    display: flex;
+    justify-content: space-between;
+}
+.issue-btn {
+    all: unset;
+    margin-left: 10px;
+    padding: 6px 14px;
+    background: #006dff;
+    color: white;
+    font-size: 14px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+.issue-btn:hover {
+    background: #0053d6;
+}
+.issue-header {
+    display: flex;
+    align-items: center;
+}
+.issue-header strong {
+    flex: 0 0 140px;
+}
+
+.report-box {
+    border: 1px solid #d1d5db;
+    padding: 15px 20px;
+    width: 430px;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.08);
+    margin-bottom: 18px;
+    transition: 0.2s ease;
+}
+.report-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.12);
+}
+.section-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #1e293b; 
+}
+.alert-box {
+    border: 1px solid #d1d5db;
+    background: #ffffff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.08);
+    width: 430px;
+    margin-bottom: 18px;
+    transition: 0.2s ease;
+    font-weight: bold;
+}
+.alert-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.12);
+}
+.alert-meta {
+    font-size: 14px;
+    color: #475569;
+    margin-top: 5px;
+}
+.status-pending {
+    color: orange;
+    background: #fff3e0;
+    font-weight: 600;
+}
+
+.status-accepted {
+    color: #3498db; 
+    background: #eaf4ff;
+    font-weight: 600;
+}
+
+.status-resolved {
+    color: green;
+    background: #eaf4ff;
+    font-weight: 600;
+}
+.report-box, .alert-box {
+  padding: 20px;
+}
+.text {
+    color: #475569;
+    font-weight:600;
+}
+.home-image-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1160px;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    text-align: center;
+    font-weight: bold;
+}
+.first-home {
+    width: 373px;
+    height: 243px;
+    border-radius: 3px;
+    margin-top: 1rem;
+    transition: transform 0.3s ease-in, box-shadow 0.3s ease-in;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.first-home:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.second-home {
+    width: 373px;
+    height: 243px;
+    border-radius: 3px;
+    margin-top: 1rem;
+    transition: transform 0.3s ease-in, box-shadow 0.3s ease-in;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.second-home:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.third-home {
+    width: 373px;
+    height: 243px;
+    border-radius: 3px;
+    margin-top: 1rem;
+    transition: transform 0.3s ease-in, box-shadow 0.3s ease-in;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.third-home:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.four-home {
+    width: 373px;
+    height: 243px;
+    border-radius: 3px;
+    margin-top: 1rem;
+    transition: transform 0.3s ease-in, box-shadow 0.3s ease-in;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.four-home:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.five-home {
+    width: 373px;
+    height: 243px;
+    border-radius: 3px;
+    margin-top: 1rem;
+    transition: transform 0.3s ease-in, box-shadow 0.3s ease-in;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.five-home:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.six-home {
+    width: 373px;
+    height: 243px;
+    border-radius: 3px;
+    margin-top: 1rem;
+    transition: transform 0.3s ease-in, box-shadow 0.3s ease-in;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.six-home:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+@media (max-width: 480px) {
+    .home-about-indore,
+    .home-margin,
+    .issues-conatiner,
+    .home-issue-button-main-container,
+    .home-image-container {
+        max-width: 1160px;
+        width: 100%;         
+        margin: 0 auto;       
+        padding-left: 20px;  
+        padding-right: 20px;
+        box-sizing: border-box;
+    }
+    .img_slider,
+    .my_slide img {
+        height: 30vh;
+    }
+    .img_slider::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 85vh;
+        background-color: rgba(0, 0, 0, 0);
+        z-index: 1;
+    }
+    .image-text {
+        font-size: small; 
+        padding-top: 3px;
+        padding-left: 3px;
+    }
+    figure {
+        width: 400%;
+        animation: 15s my_slide infinite;
+    }
+
+    .my_slide {
+        width: 25%;
+    }
+}
+@media (max-width: 480px) {
+    .home-about-indore h2 {
+        font-size: 16px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .img-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    .img-container div {
+        width: 100%;
+        text-align: center;
+    }
+    .img-container img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+    .img-container h3 {
+        font-size: 14px;
+        margin: 5px 0;
+    }
+    .img-container p {
+        font-size: 12px;
+    }
+    .btn-see-more {
+        width: 90%;
+        margin: 10px auto;
+        display: block;
+        text-align: center;
+    }
+    .btn-final {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+    .home-margin {
+        padding: 10px;
+    }
+    .home-margin h2 {
+        font-size: 16px;
+        text-align: center;
+    }
+    .home-margin p {
+        font-size: 12px;
+    }
+    .Indore-city-heading {
+        text-align: center;
+        font-size: 14px;
+        margin: 5px 0;
+    }
+    .rating-box-main-container {
+        overflow-x: auto; 
+    }
+    .rating-box-home table {
+        font-size: 12px;
+    }
+    .btn-see-more-rating {
+        width: 90%;
+        margin: 10px auto;
+        display: block;
+        text-align: center;
+    }
+    .btn-final-rating {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+    .issues-conatiner {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    .issues-conatiner div {
+        font-size: 12px;
+        text-align: center;
+    }
+    .home-issue-button-main-container{
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap; 
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    .home-issue-button-main-container > div {
+        flex: 1 1 48%;
+        min-width: 300px; 
+    }
+    .report-box {
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+        margin: 5px auto;
+        border-radius: 8px;
+        box-sizing: border-box;
+    }
+    .issue-btn {
+        font-size: 14px;
+        padding: 10px;       
+        width: 100%;        
+        box-sizing: border-box;
+        text-align: center;
+    }
+    .text {
+        font-size: 11px;
+    }
+    .alert-box {
+        width: 95%;
+        margin: 5px auto;
+        padding: 8px;
+        font-size: 12px;
+    }
+    .alert-meta {
+        font-size: 10px;
+    }
+    .home-image-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    .home-image-container div {
+        text-align: center;
+    }
+    .home-image-container img {
+        height: auto;
+        border-radius: 8px;
+    }
+    .home-image-container p {
+        font-size: 12px;
+        margin-top: 4px;
+    }
+}

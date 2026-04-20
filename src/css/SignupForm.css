@@ -1,0 +1,220 @@
+.signup-container {
+    margin-top: 0px;
+}
+body {
+    padding-top: 50px;
+}
+.heading-create {
+    display: flex;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 500;
+    color: black;
+    margin: 0; 
+    line-height: 1.2;
+}
+.sub-heading-signup {
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 400;
+    color: #555555;
+}
+.sub-heading-signup a {
+  margin-left: 5px;
+}
+.signup-form {
+    width: 100%;
+    max-width: 450px;
+    box-sizing: border-box;
+}
+.label-full-name input:focus {
+    border-color: #0075ff;
+    box-shadow: 0 0 4px rgba(0,118,255,0.3);
+    outline: none;
+}
+.full-name {
+    width: 100%;
+    box-sizing: border-box; 
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    padding: 12px;
+    font-size: 15px;
+}
+.label-email input:focus {
+    border-color: #0075ff;
+    box-shadow: 0 0 4px rgba(0,118,255,0.3);
+    outline: none;
+}
+.email {
+    width: 100%;
+    box-sizing: border-box; 
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    padding: 12px;
+    font-size: 15px;
+}
+.label-password {
+    position: relative;
+}
+.label-password input:focus {
+    border-color: #0075ff;
+    box-shadow: 0 0 4px rgba(0,118,255,0.3);
+    outline: none;
+}
+.signup-password {
+    width: 100%;
+    box-sizing: border-box; 
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    padding: 12px;
+    font-size: 15px;
+}
+.eye-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-38%);
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 2;
+}
+.label-confirm-password {
+    position: relative;
+}
+.label-confirm-password input:focus {
+    border-color: #0075ff;
+    box-shadow: 0 0 4px rgba(0,118,255,0.3);
+    outline: none;
+}
+.confirm-password {
+    width: 100%;
+    box-sizing: border-box; 
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    padding: 12px;
+    font-size: 15px;
+}
+.eye-confirm-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-38%);
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 2;
+}
+.label-select select:focus {
+    border-color: #0075ff;
+    box-shadow: 0 0 4px rgba(0,118,255,0.3);
+    outline: none;
+}
+.select{
+    width: 100%;
+    box-sizing: border-box; 
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    padding: 12px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.create-btn {
+    width: 100%;
+    box-sizing: border-box; 
+    border: none;
+    background: #006dff;
+    border-radius: 8px;
+    font-size: medium;
+    color: white;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+.create-btn:hover {
+    background: #0053d6;
+}
+.day-month-year {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.day-month-year select:focus {
+    border-color: #0075ff;
+    box-shadow: 0 0 4px rgba(0,118,255,0.3);
+    outline: none;
+}
+.day-month-year select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    text-align-last: center;
+    cursor: pointer;
+}
+.day-month-year label{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-weight: 500;
+}
+.date-of-birth {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 500;
+}
+.signup-form > div {
+    margin-bottom: 10px;
+}
+
+
+
+@media (max-width: 600px) {
+    .heading-create {
+        font-size: 22px;
+    }
+    .sub-heading-signup {
+        font-size: 13px;
+    }
+    .signup-form {
+        max-width: 330px;
+        width: 92%;
+        margin: 0 auto;
+    }
+    .full-name,
+    .email,
+    .signup-password,
+    .confirm-password,
+    .select {
+        padding: 10px;
+        font-size: 13px;
+        border-radius: 6px;
+    }
+    .eye-password,
+    .eye-confirm-password {
+        font-size: 18px;
+        right: 8px;
+    }
+    .date-of-birth {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    .day-month-year {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .day-month-year select {
+        width: 100%;
+        padding: 10px;
+        font-size: 13px;
+        border-radius: 6px;
+    }
+    .create-btn {
+        padding: 8px 12px;
+        font-size: 14px;
+        border-radius: 6px;
+    }
+}

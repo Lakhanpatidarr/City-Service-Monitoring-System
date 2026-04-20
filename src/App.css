@@ -1,0 +1,13 @@
+.app-container {
+  min-width: 100%;
+  min-height: 100vh;
+  background: #f2f7fc;
+  display: flex;
+  flex-direction: column;
+}
+body {
+  caret-color: transparent;
+}
+input, textarea {
+  caret-color: auto;
+}

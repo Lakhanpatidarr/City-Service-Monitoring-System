@@ -1,0 +1,139 @@
+.heading {
+    font-size: 28px;
+    font-weight: 500;
+    color: black;
+    margin: 0; 
+    line-height: 1.2; 
+}
+.sub-heading {
+    font-size: 16px;
+    font-weight: 400;
+    color: #555555;
+    line-height: 1.5;
+}
+.dont-have-account {
+    font-size: 16px;
+    font-weight: 400;
+    color: #555555;
+    line-height: 1.5;
+}
+.login-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+    max-width: 450px;
+    box-sizing: border-box;
+    margin-top: 24px;
+}
+.login-label input:focus {
+    border-color: #0075ff;
+    box-shadow: 0 0 4px rgba(0,118,255,0.3);
+    outline: none;
+}
+.email-btn {
+    width: 100%;
+    box-sizing: border-box; 
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    padding: 12px;
+    font-size: medium;
+}
+.email-btn::placeholder {
+    font-size: 15px;
+}
+.password-label {
+    position: relative;
+}
+.password-label input:focus {
+    border-color: #0075ff;
+    box-shadow: 0 0 4px rgba(0,118,255,0.3);
+    outline: none;
+}
+.password {
+    width: 100%;
+    box-sizing: border-box; 
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    padding: 12px;
+    font-size: medium;
+}
+.password::placeholder {
+    font-size: 15px;
+}
+.eye {
+    position: absolute;
+    right: 0.75rem;
+    top: 9px;
+    cursor: pointer;
+}
+.forgot-password {
+    text-decoration: none;
+    display: block;
+    margin-top: 0.25rem;
+    max-width: max-content;
+    margin-left: auto;
+}
+.loginForm-btn {
+    width: 100%;
+    box-sizing: border-box; 
+    border: none;
+    background: #006dff;
+    border-radius: 8px;
+    font-size: medium;
+    color: white;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+.loginForm-btn:hover {
+    background: #0053d6;
+}
+
+
+
+
+
+
+@media (max-width: 600px) {
+    .heading {
+        font-size: 22px;
+        text-align: center;
+    }
+    .sub-heading,
+    .dont-have-account {
+        font-size: 14px;
+        text-align: center;
+        line-height: 1.4;
+    }
+    .login-form {
+        max-width: 100%;
+        width: 100%;
+        padding: 0 16px;
+        margin-top: 20px;
+    }
+    .email-btn,
+    .password {
+        padding: 10px;
+        font-size: 14px;
+    }
+    .email-btn::placeholder,
+    .password::placeholder {
+        font-size: 13px;
+    }
+    .eye {
+        top: 8px;
+        right: 12px;
+    }
+    .forgot-password {
+        font-size: 12px;
+        margin-top: 6px;
+    }
+    .loginForm-btn {
+        padding: 10px;
+        font-size: 15px;
+        margin-top: 14px;
+    }
+}
