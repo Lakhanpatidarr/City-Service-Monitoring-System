@@ -15,8 +15,9 @@ const userSchema = new mongoose.Schema({
     },
     password:{
         type:String,
-        require:true,
-        trim:true,
+        required: function () {
+            return this.accountType !== "Public";
+        }
     },
     accountType:{
         type:String,
@@ -26,7 +27,8 @@ const userSchema = new mongoose.Schema({
     },
     department: {
         type: String,
-        enum: ["Police Department", "Municipal Department", "Fire Department", "Health Department", "Tourism Department", "Infrastructure Department", "General Department"],
+        enum: ["Police Department", "Municipal Department", "Fire Department", "Health Department", "Tourism Department", "Infrastructure Department"],
+        default: null,
         required: function () {
             return this.accountType === "Admin" || this.accountType === "Officer";
         }
@@ -38,14 +40,14 @@ const userSchema = new mongoose.Schema({
     },
     select:{
         type:String,
-        require:true,
+        default:"Not Selected"
     },
     dob:{
         type:Date,
     },
     isVerified:{
         type:Boolean,
-        default:false,
+        default:true,
     },
 });
 module.exports = mongoose.model("User",userSchema);
