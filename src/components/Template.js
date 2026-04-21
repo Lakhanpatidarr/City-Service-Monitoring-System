@@ -9,7 +9,7 @@ import '../css/Template.css'
 const Template = ({ formtype }) => {
     const handleGoogleLogin = () => {
         setTimeout(() => {
-            window.location.href = "http://localhost:4000/api/v1/auth/google";
+            window.location.href = "https://city-service-monitoring-system.onrender.com/api/v1/auth/google";
         }, 500);
     };
     return (
