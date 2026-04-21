@@ -1,5 +1,5 @@
 import { apiConnector } from "./apiConnector";
-import { authAPIs, createAdminAPIs, createOfficerAPIs, getAllAdminAPIs, getAllRatindAPIs, submitRatingAPIs, getAllOfficerAPIs } from "./apis";
+import { authAPIs, createAdminAPIs, createOfficerAPIs, getAllAdminAPIs, getAllRatingAPIs, submitRatingAPIs, getAllOfficerAPIs } from "./apis";
 import { subscribeAPIs } from "./apis";
 import { issueAPIs } from "./apis";
 import { resetPasswordAPIs } from "./apis";
@@ -128,7 +128,7 @@ export const getAllAdminAPI = () => {
 
 export const getAllRatingAPI = () => {
     const token = localStorage.getItem("token");
-    return apiConnector("GET",getAllRatindAPIs.GETALLRATING_API,null,{
+    return apiConnector("GET",getAllRatingAPIs.GETALLRATING_API,null,{
         Authorization: `Bearer ${token}`,
     })
 }
@@ -138,7 +138,7 @@ export const getAllRatingAPI = () => {
 
 export const getTopThreeAPI = () => {
     const token = localStorage.getItem("token");
-    return apiConnector("GET",getAllRatindAPIs.GETTOPTHREERATING_API,null, {
+    return apiConnector("GET",getAllRatingAPIs.GETTOPTHREERATING_API,null, {
         Authorization: `Bearer ${token}`,
     })
 }

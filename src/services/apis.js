@@ -32,7 +32,7 @@ export const createOfficerAPIs = {
 export const getAllAdminAPIs = {
     GETALLADMIN_API : BASE_URL + "/api/v1/admin/get-all-admins",
 }
-export const getAllRatindAPIs = {
+export const getAllRatingAPIs = {
     GETALLRATING_API : BASE_URL + '/api/v1/rating/all',
     GETTOPTHREERATING_API : BASE_URL + '/api/v1/rating/top-3'
 }
