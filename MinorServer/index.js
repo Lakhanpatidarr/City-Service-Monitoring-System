@@ -54,22 +54,6 @@ app.use("/api/v1/chatbot", chatRoute);
 //         message: "Your server is up and running....",
 //     });
 // })
-const path = require("path");
-app.use(express.static(path.join(__dirname, "../build")));
-app.use((req, res) => {
-    if (req.path.startsWith("/api")) {
-        return res.status(404).json({ message: "API route not found" });
-    }
-    res.sendFile(path.join(__dirname, "../build", "index.html"));
-});
-// const path = require("path");
-// app.use(express.static(path.join(__dirname, "../build")));
-// app.get(/^(?!\/api).+/, (req, res) => {
-//     if (req.path.startsWith("/api")) {
-//         return res.status(404).json({ message: "API route not found" });
-//     }
-//     res.sendFile(path.join(__dirname, "../build", "index.html"));
-// });
 app.listen(PORT, () => {
     console.log(`App is running at ${PORT}`);
 })
