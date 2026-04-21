@@ -10,7 +10,7 @@ useEffect( ()=> {
     async function fetchRatings() {
         try {
             const response = await getAllRatingAPI();
-            setRatings(response.data.data);
+            setRatings(response?.data?.data || []);
         }
         catch(err) {
             console.log(err);
@@ -18,7 +18,7 @@ useEffect( ()=> {
     }
     fetchRatings();
 },[]);
-const filteredRatings = ratings.filter((item) =>
+const filteredRatings = (ratings||[]).filter((item) =>
     item.zone.toLowerCase().includes(search.toLowerCase()) ||
     item.rating.toString().includes(search)
     );
@@ -30,7 +30,7 @@ const filteredRatings = ratings.filter((item) =>
                 <h3>Zone Ratings</h3>
                 <div>
                     {
-                        ratings.length === 0 ? (<p>No Rating Added Yet.</p>) : (<table>
+                        !ratings||ratings.length === 0 ? (<p>No Rating Added Yet.</p>) : (<table>
                             <thead>
                                 <tr>
                                     <th>Zone Name</th>
