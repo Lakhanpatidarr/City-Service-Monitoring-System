@@ -22,16 +22,20 @@ const fileUpload = require("express-fileupload");
 
 const PORT = process.env.PORT || 4000;
 database.connect();
+const corsOptions = {
+    origin: [
+        "http://localhost:3001",
+        "https://city-service-monitoring-system.vercel.app"
+    ],
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+};
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions)); 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(
-    cors({
-        // origin: "http://localhost:3001",
-        origin: true,
-        credentials: true,
-    })
-)
 app.use(passport.initialize());
 app.use(
     fileUpload({
