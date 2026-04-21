@@ -21,7 +21,7 @@ const Home = () => {
         async function fetchTopRatings () {
             try {
                 const response = await getTopThreeAPI();
-                setTopRatings(response.data.data);
+                setTopRatings(response?.data?.data || []);
             }
             catch(err) {
                 console.log(err);
@@ -67,7 +67,7 @@ const Home = () => {
                         <p>Indore is the commercial hub of Madhya Pradesh. It has an IT sector, business parks, etc.</p>
                     </div>
                 </div>
-                <Link Link to="/aboutcity" className="btn-home">See More →</Link>
+                <Link to="/aboutcity" className="btn-home">See More →</Link>
                 <div className="home-margin">
                     <div>
                         <h2>Ratings</h2>
@@ -79,7 +79,7 @@ const Home = () => {
                             <h3>Top 3 Zone Ratings</h3>
                             <div>
                                 {
-                                    topRatings.length === 0 ? (<p>No Rating Added Yet.</p>) : (<table>
+                                    !topRatings || topRatings.length === 0 ? (<p>No Rating Added Yet.</p>) : (<table>
                                         <thead>
                                             <tr>
                                                 <th>Zone Name</th>
@@ -90,8 +90,8 @@ const Home = () => {
                                             {
                                                 topRatings.map((item, index) => (
                                                     <tr key={index}>
-                                                        <td>{item._id}</td>
-                                                        <td>{item.avgRating}</td>
+                                                        <td>{item?._id}</td>
+                                                        <td>{item?.avgRating}</td>
                                                     </tr>
                                                 ))
                                             }
@@ -188,4 +188,4 @@ const Home = () => {
         </div>
     )
 }
-export default Home
+export default Home;
