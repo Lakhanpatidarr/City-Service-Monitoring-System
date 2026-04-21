@@ -12,7 +12,7 @@ const AdminPage = () => {
         async function fetchOfficers() {
             try {
                 const response = await getAllOfficerAPI();
-                setOfficers(response.data.data);
+                setOfficers(response?.data?.data||[]);
             }
             catch (err) {
                 console.log(err);
@@ -28,7 +28,7 @@ const AdminPage = () => {
             }
             try {
                 const res = await getAllIssuesAPI();
-                setIssues(res.data.data);
+                setIssues(res?.data.data || []);
             }
             catch (err) {
                 console.log(err.response?.data);
@@ -36,12 +36,12 @@ const AdminPage = () => {
         };
         fetchData();
     }, []);
-    const filteredOfficers = officers.filter((officer) =>
+    const filteredOfficers = (officers||[]).filter((officer) =>
         officer.fullname.toLowerCase().includes(search.toLowerCase()) ||
         officer.email.toLowerCase().includes(search.toLowerCase()) ||
         officer.department.toLowerCase().includes(search.toLowerCase())
     );
-    const sortedIssues = [...issues].sort((a, b) => {
+    const sortedIssues = [...(issues||[])].sort((a, b) => {
         if (a.issuetype === "Urgent Issue" && b.issuetype !== "Urgent Issue") return -1;
         if (a.issuetype !== "Urgent Issue" && b.issuetype === "Urgent Issue") return 1;
         return 0;
