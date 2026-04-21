@@ -22,11 +22,14 @@ passport.use(
                         phoneno: "",
                         address: ""
                     });
+                    if (!profileDetails) {
+                        throw new Error("Profile not created");
+                    }
                     user = await User.create({
                         fullname: profile.displayName,
                         email: email,
                         accountType: "User",
-                        department: "General", 
+                        department: "General",
                         additionalDetails: profileDetails._id,
                         image: `https://api.dicebear.com/5.x/initials/svg?seed=${profile.displayName}`
                     });
