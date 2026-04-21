@@ -1,44 +1,50 @@
 const Rating = require("../models/Rating");
 
 
-exports.createRating = async(req,res)=> {
+exports.createRating = async (req, res) => {
     try {
         const userId = req.user.id;
-        const{rating,zone} = req.body;
-        if(!rating || !zone) {
+        const { rating, zone } = req.body;
+        if (!rating || !zone) {
             return res.status(400).json({
-                success:false,
-                message:"All fields required",
+                success: false,
+                message: "All fields required",
             });
         }
-        const alreadyRated = await Rating.findOne({user:userId,zone:zone});
-        if(alreadyRated) {
+        const alreadyRated = await Rating.findOne({ user: userId, zone: zone });
+        if (alreadyRated) {
             return res.status(403).json({
-                success:false,
-                message:"You have already rated this zone",
+                success: false,
+                message: "You have already rated this zone",
             });
         }
-        const newRating = await Rating.create({user:userId,zone,rating});
+        const newRating = await Rating.create({ user: userId, zone, rating });
         return res.status(201).json({
-            success:true,
-            message:"Rating submitted successfully",
+            success: true,
+            message: "Rating submitted successfully",
         });
     }
-    catch(error) {
+    catch (error) {
         return res.status(500).json({
-            success:false,
-            message:"Error while creating rating",
+            success: false,
+            message: "Error while creating rating",
         });
     }
 };
 
-exports.getThreeTopRating = async(req,res) => {
+exports.getThreeTopRating = async (req, res) => {
     try {
         const topZones = await Rating.aggregate([
             {
+                $match: {
+                    zone: { $exists: true, $ne: null },
+                    rating: { $exists: true, $ne: null }
+                }
+            },
+            {
                 $group: {
                     _id: "$zone",
-                    avgRating: { $avg: "$rating" },
+                    avgRating: { $avg: { $toDouble: "$rating" } },
                 },
             },
             {
@@ -49,14 +55,14 @@ exports.getThreeTopRating = async(req,res) => {
             },
         ]);
         return res.status(200).json({
-            success:true,
-            data:topZones,
+            success: true,
+            data: topZones,
         });
     }
-    catch(error) {
+    catch (error) {
         return res.status(500).json({
-            success:false,
-            message:"Error while fetching top rated zones",
+            success: false,
+            message: "Error while fetching top rated zones",
         });
     }
 };
@@ -86,7 +92,7 @@ exports.getZoneAndRating = async (req, res) => {
             success: true,
             data,
         });
-    } 
+    }
     catch (error) {
         return res.status(500).json({
             success: false,
