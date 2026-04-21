@@ -25,7 +25,7 @@ database.connect();
 const corsOptions = {
     origin: [
         "http://localhost:3001",
-        "https://city-service-monitoring-system.vercel.app"
+        "https://city-service-monitoring-system.netlify.app"
     ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
