@@ -14,7 +14,7 @@ router.get("/google/callback",
     passport.authenticate("google", { failureRedirect: "/login", session: false, prompt: "consent select_account"}),
     (req, res) => {
         const {user,token} = req.user;
-        res.redirect(`http://localhost:3001/auth/google/callback?token=${token}&user=${encodeURIComponent(JSON.stringify(user))}`);
+        res.redirect(`${process.env.CLIENT_URL}/auth/google/callback?token=${token}&user=${encodeURIComponent(JSON.stringify(user))}`);
     }
 );
 
