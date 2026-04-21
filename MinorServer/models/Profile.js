@@ -13,11 +13,11 @@ const profileSchema = new mongoose.Schema({
     },
     phoneno:{
         type:Number,
-        require:true,
+        default: null
     },
     address:{
         type:String,
-        require:true,
+        default: ""
     }
 })
 
