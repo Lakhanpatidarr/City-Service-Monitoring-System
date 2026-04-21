@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setToken } from "../slices/authSlice";
+import { setToken, setUser } from "../slices/authSlice";
 
 const GoogleCallback = () => {
     const navigate = useNavigate();
@@ -15,7 +15,13 @@ const GoogleCallback = () => {
             localStorage.setItem("token", token);
             dispatch(setToken(token));
             if (user) {
-                localStorage.setItem("user", user);
+                try {
+                    const parsedUser = JSON.parse(decodeURIComponent(user));
+                    localStorage.setItem("user", JSON.stringify(parsedUser));
+                    dispatch(setUser(parsedUser));
+                } catch (err) {
+                    console.log("User parse error:", err);
+                }
             }
             navigate("/dashboard");
         } else {

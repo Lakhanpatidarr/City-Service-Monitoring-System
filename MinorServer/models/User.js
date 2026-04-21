@@ -26,7 +26,7 @@ const userSchema = new mongoose.Schema({
     },
     department: {
         type: String,
-        enum: ["Police Department", "Municipal Department", "Fire Department", "Health Department", "Tourism Department", "Infrastructure Department"],
+        enum: ["Police Department", "Municipal Department", "Fire Department", "Health Department", "Tourism Department", "Infrastructure Department", "General Department"],
         required: function () {
             return this.accountType === "Admin" || this.accountType === "Officer";
         }

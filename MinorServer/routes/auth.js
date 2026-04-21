@@ -11,8 +11,9 @@ router.get(
   passport.authenticate("google", { session: false }),
   (req, res) => {
     const token = req.user.token;
+    const user = req.user.user;
 
-    res.redirect(`${process.env.CLIENT_URL}/login-success?token=${token}`);
+    res.redirect(`${process.env.CLIENT_URL}/auth/google/callback?token=${token}&user=${encodeURIComponent(JSON.stringify(user))}`);
   }
 );
 module.exports = router;
