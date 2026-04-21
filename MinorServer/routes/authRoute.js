@@ -11,10 +11,13 @@ router.post("/login", login);
 router.post("/change-password", changePassword);
 router.get("/google", passport.authenticate("google", { scope: ["profile", "email"], session: false }));
 router.get("/google/callback",
-    passport.authenticate("google", { failureRedirect: "/login", session: false, prompt: "consent select_account"}),
+    passport.authenticate("google", { failureRedirect: "/login", session: false, prompt: "consent select_account" }),
     (req, res) => {
-        const {user,token} = req.user;
-        const CLIENT_URL = process.env.CLIENT_URL || "http://localhost:3001";
+        const { user, token } = req.user;
+        const CLIENT_URL = process.env.CLIENT_URL;
+        if (!CLIENT_URL) {
+            return res.send("CLIENT_URL not set in environment variables");
+        }
         res.redirect(`${CLIENT_URL}/auth/google/callback?token=${token}&user=${encodeURIComponent(JSON.stringify(user))}`);
     }
 );
