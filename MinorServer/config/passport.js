@@ -29,7 +29,6 @@ passport.use(
                         fullname: profile.displayName,
                         email: email,
                         accountType: "User",
-                        department: "General",
                         additionalDetails: profileDetails._id,
                         image: `https://api.dicebear.com/5.x/initials/svg?seed=${profile.displayName}`
                     });
