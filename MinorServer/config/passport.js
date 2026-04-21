@@ -28,7 +28,7 @@ passport.use(
                     user = await User.create({
                         fullname: profile.displayName,
                         email: email,
-                        accountType: "User",
+                        accountType: "Public",
                         additionalDetails: profileDetails._id,
                         image: `https://api.dicebear.com/5.x/initials/svg?seed=${profile.displayName}`
                     });
