@@ -29,6 +29,17 @@ exports.updateProfile = async (req, res) => {
         const profileId = userDetails.additionalDetails;
         const profileDetails = await Profile.findById(profileId);
         if (!profileDetails) {
+            profileDetails = await Profile.create({
+                fullname,
+                email,
+                phoneno: phone,
+                address
+            });
+
+            userDetails.additionalDetails = profileDetails._id;
+            await userDetails.save();
+        }
+        if (!profileDetails) {
             return res.status(404).json({
                 success: false,
                 message: "Profile not found",
