@@ -181,6 +181,7 @@ exports.login = async(req,res)=> {
 exports.changePassword = async(req,res)=>{
     try {
         const {email,password,newPassword,confirmNewPassword} = req.body;
+        console.log("BODY:", req.body);
         if(!password || !newPassword || !confirmNewPassword)
         {
             return res.status(400).json({
@@ -189,11 +190,18 @@ exports.changePassword = async(req,res)=>{
             });
         }
         const user = await User.findOne({email});
+        console.log("USER:", user);
         if(!user)
         {
             return res.status(400).json({
                 success:false,
                 message:"User Not Found",
+            });
+        }
+        if (!user.password) {
+            return res.status(400).json({
+                success: false,
+                message: "Google account detected. Please set password first."
             });
         }
         const isMatch = await bcrypt.compare(password,user.password);
@@ -213,7 +221,7 @@ exports.changePassword = async(req,res)=>{
         const hashedPassword = await bcrypt.hash(newPassword,10);
         user.password = hashedPassword;
         await user.save();
-        await mailSender(email,"Password Updated Successfully","Your password has been changed successfully. If you did not perform this action, please contact support immediately.");
+        await mailSender(user.email,"Password Updated Successfully","Your password has been changed successfully. If you did not perform this action, please contact support immediately.");
         return res.status(200).json({
             success:true,
             message:"Password Change Successfully",
