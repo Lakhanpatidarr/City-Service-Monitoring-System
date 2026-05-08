@@ -20,9 +20,10 @@ exports.createAdmin = async(req,res) => {
                 message:"Admin already exists for this department"
             });
         }
-        user.accountType = "Admin";
-        user.department = department;
-        await user.save();
+        const updateUser = await User.findByIdAndUpdate(user._id,{
+            accountType:"Admin",
+            department
+        },{new:true});
         return res.json({
             success:true,
             message:"User Promoted To Admin",
@@ -52,9 +53,10 @@ exports.createOfficer = async(req,res) => {
                 message:"User not found"
             });
         }
-        user.accountType = "Officer";
-        user.department = department;
-        await user.save();
+        const updateUser = await User.findByIdAndUpdate(user._id,{
+            accountType:"Officer",
+            department
+        },{new:true});
         return res.json({
             success:true,
             message:"User Promoted To Officer",
