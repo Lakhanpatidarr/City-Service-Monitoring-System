@@ -118,7 +118,7 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.super-admin-details{
+.super-admin-details p{
   margin: 5px 0;
   white-space: nowrap;
   overflow: hidden;
