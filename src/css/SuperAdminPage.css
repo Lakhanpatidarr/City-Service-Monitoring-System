@@ -107,6 +107,9 @@
   margin-top: 0px;
   border: 1px solid black;
   border-radius: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .super-admin-desc {
   margin-bottom: 15px;
@@ -117,10 +120,9 @@
 }
 .super-admin-details p {
   margin: 5px 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
+  white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 .status.Pending {
   color: orange;
