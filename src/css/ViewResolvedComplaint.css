@@ -37,6 +37,10 @@
   margin-top: 0px;
   border: 1px solid black;
   border-radius: 3px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .resolved-desc {
   margin-bottom: 15px;
@@ -45,8 +49,12 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.resolved-details p {
+.resolved-details{
   margin: 5px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .status.Pending {
   color: orange;
