@@ -118,12 +118,12 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.super-admin-details p{
+.super-admin-details{
   margin: 5px 0;
-  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%;
 }
 .status.Pending {
   color: orange;
