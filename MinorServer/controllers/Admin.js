@@ -76,7 +76,7 @@ exports.createOfficer = async(req,res) => {
 
 exports.getAllAdmins = async (req, res) => {
     try {
-        const admins = await User.find({ accountType: "Admin" });
+        const admins = await User.find({ accountType: "Admin",department: req.user.department });
 
         return res.status(200).json({
             success: true,
@@ -91,7 +91,7 @@ exports.getAllAdmins = async (req, res) => {
 };
 exports.getAllOfficers = async (req, res) => {
     try {
-        const officers = await User.find({ accountType: "Officer" });
+        const officers = await User.find({ accountType: "Officer",department: req.user.department });
 
         return res.status(200).json({
             success: true,
