@@ -211,6 +211,7 @@ exports.changePassword = async (req, res) => {
         }
         const hashedPassword = await bcrypt.hash(newPassword, 10);
         user.password = hashedPassword;
+        await user.save({validateBeforeSave:false});
         if (user.accountType === "Public" || user.accountType === "SuperAdmin") {
             await User.updateOne(
                 { _id: user._id },
