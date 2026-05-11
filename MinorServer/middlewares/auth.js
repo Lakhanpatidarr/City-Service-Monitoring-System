@@ -14,7 +14,8 @@ exports.auth = async(req,res,next)=> {
         }
         try {
             const payload = jwt.verify(token,process.env.JWT_SECRET);
-            req.user = payload;
+            const user = await User.findById(payload.id);
+            req.user = user;
         }
         catch(error) {
             return res.status(400).json({
