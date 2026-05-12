@@ -7,16 +7,20 @@ const AdminPage = () => {
     const [officers, setOfficers] = useState([]);
     const [search, setSearch] = useState("");
     const [issues, setIssues] = useState([]);
+    const [officerLoading, setOfficerLoading] = useState(false);
+    const [issueLoading, setIssueLoading] = useState(false);
     const token = localStorage.getItem("token");
     useEffect(() => {
         async function fetchOfficers() {
+            setOfficerLoading(true);
             try {
                 const response = await getAllOfficerAPI();
-                setOfficers(response?.data?.data||[]);
+                setOfficers(response?.data?.data || []);
             }
             catch (err) {
                 console.log(err);
             }
+            setOfficerLoading(false);
         }
         fetchOfficers();
     }, [])
@@ -26,6 +30,7 @@ const AdminPage = () => {
                 console.log("No token found");
                 return;
             }
+            setIssueLoading(true);
             try {
                 const res = await getAllIssuesAPI();
                 setIssues(res?.data.data || []);
@@ -33,19 +38,27 @@ const AdminPage = () => {
             catch (err) {
                 console.log(err.response?.data);
             }
+            setIssueLoading(false);
         };
         fetchData();
     }, []);
-    const filteredOfficers = (officers||[]).filter((officer) =>
+    const filteredOfficers = (officers || []).filter((officer) =>
         officer.fullname.toLowerCase().includes(search.toLowerCase()) ||
         officer.email.toLowerCase().includes(search.toLowerCase()) ||
         officer.department.toLowerCase().includes(search.toLowerCase())
     );
-    const sortedIssues = [...(issues||[])].sort((a, b) => {
+    const sortedIssues = [...(issues || [])].sort((a, b) => {
         if (a.issuetype === "Urgent Issue" && b.issuetype !== "Urgent Issue") return -1;
         if (a.issuetype !== "Urgent Issue" && b.issuetype === "Urgent Issue") return 1;
         return 0;
     });
+    if (officerLoading || issueLoading) {
+        return (
+            <div className="center-spinner">
+                <div className="spinner"></div>
+            </div>
+        )
+    }
     return (
         <div className='admin-container'>
             <div className="admin-title">Welcome To Admin Department</div>

@@ -7,9 +7,12 @@ const SuperAdminPage = () => {
     const [admins, setAdmins] = useState([]);
     const [search, setSearch] = useState("");
     const [issues, setIssues] = useState([]);
+    const [adminLoading, setAdminLoading] = useState(false);
+    const [issueLoading, setIssueLoading] = useState(false);
     const token = localStorage.getItem("token");
     useEffect(() => {
         async function fetchAdmins() {
+            setAdminLoading(true);
             try {
                 const response = await getAllAdminAPI();
                 setAdmins(response.data.data);
@@ -17,11 +20,13 @@ const SuperAdminPage = () => {
             catch (err) {
                 console.log(err);
             }
+            setAdminLoading(false);
         }
         fetchAdmins();
     }, [])
     useEffect(() => {
         const fetchData = async () => {
+            setIssueLoading(true);
             try {
                 const res = await getAllIssuesAPI();
                 setIssues(res.data.data);
@@ -29,6 +34,7 @@ const SuperAdminPage = () => {
             catch (err) {
                 console.log(err.response?.data);
             }
+            setIssueLoading(false);
         };
         fetchData();
     }, []);
@@ -42,6 +48,13 @@ const SuperAdminPage = () => {
         if (a.issuetype !== "Urgent Issue" && b.issuetype === "Urgent Issue") return 1;
         return 0;
     });
+    if (adminLoading || issueLoading) {
+        return (
+            <div className="center-spinner">
+                <div className="spinner"></div>
+            </div>
+        )
+    }
     return (
         <div className='super-admin-container'>
             <div className="super-admin-title">Welcome To Super Admin Department</div>

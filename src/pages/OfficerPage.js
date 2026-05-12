@@ -5,9 +5,11 @@ import { updateStatusAPI } from '../services/apiCalls';
 import { useEffect, useState } from 'react';
 const OfficerPage = () => {
     const [issues, setIssues] = useState([]);
+    const [loading, setloading] = useState(false);
     const token = localStorage.getItem("token");
     useEffect(() => {
         const fetchData = async () => {
+            setloading(true);
             try {
                 const res = await getAllIssuesAPI();
                 setIssues(res.data.data);
@@ -15,6 +17,7 @@ const OfficerPage = () => {
             catch (err) {
                 console.log(err.response?.data);
             }
+            setloading(false);
         };
         fetchData();
     }, []);
@@ -39,6 +42,13 @@ const OfficerPage = () => {
         if (a.issuetype !== "Urgent Issue" && b.issuetype === "Urgent Issue") return 1;
         return 0;
     });
+    if (loading) {
+        return (
+            <div className="center-spinner">
+                <div className="spinner"></div>
+            </div>
+        )
+    }
     return (
         <div className='officer-complaint-container'>
             <h2 className="officer-title-complaints">Welcome To Officer Department</h2>
