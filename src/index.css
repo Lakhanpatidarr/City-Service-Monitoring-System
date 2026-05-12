@@ -21,12 +21,11 @@ html {
   position: fixed;
   top: 60px;
   left: 0;
-  width: 100%;
-  height: calc(100vh - 60px);
+  right: 0;
+  bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 120px;
   background: rgba(0,0,0,0.9);
   z-index: 9999;
 }
