@@ -32,7 +32,6 @@ const ViewRating = () => {
 
                 <div className="center-spinner">
                     <div className="spinner"></div>
-                    <p className="loading-text">Loading Ratings...</p>
                 </div>
 
             ) : (

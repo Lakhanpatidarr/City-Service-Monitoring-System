@@ -25,7 +25,6 @@ const ViewAllComplaints = () => {
             {loading ? (
                 <div className="center-spinner">
                     <div className="spinner"></div>
-                    <p className="loading-text">Loading Complaints...</p>
                 </div>
             ) : (
                 <>

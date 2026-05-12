@@ -33,7 +33,6 @@ const VerifyOtp = () => {
       {loading ? (
         <div className="center-spinner">
           <div className="spinner"></div>
-          <p className="loading-text">Verifying OTP...</p>
         </div>
       ) : (
         <form onSubmit={submitHandler} className="verify-otp-form">
