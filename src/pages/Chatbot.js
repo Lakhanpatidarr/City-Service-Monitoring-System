@@ -33,7 +33,7 @@ export default function Chatbot() {
     return (
         <>
             <div className="chat-icon" onClick={() => setOpen(!open)}>
-                <img src={chatGif}></img>
+                {/* <img src={chatGif}></img> */}
             </div>
             {open && (
                 <div className="chat-box">
